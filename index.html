@@ -23,7 +23,7 @@
         <div class="prev" @click="previousImage()"></div>
 
         <div class="thumb active" v-for="image in images">
-          <img :src="images[currentImage].src" alt="" />
+          <img :src="image.src" alt="" />
         </div>
         <!-- next button -->
         <div class="next" @click="nextImage()"></div>
