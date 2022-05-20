@@ -11,7 +11,10 @@
     <div class="container" id="root">
       <div class="items">
         <div class="item active">
-          <img :src="images[currentImage].src" alt="" />
+          <img
+            :src="images[currentImage].src"
+            :alt="images[currentImage].title"
+          />
           <div class="text">
             <h3>{{images[currentImage].title}}</h3>
             <p>{{images[currentImage].text}}</p>
@@ -25,7 +28,7 @@
         <div
           class="thumb"
           v-for="(image,index) in images"
-          :class="{ active: image.isActive }"
+          :class="{ active: currentImage == index }"
           @click="selectImage(image,index)"
         >
           <img :src="image.src" alt="image.title" />
