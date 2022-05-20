@@ -61,8 +61,11 @@ const app = new Vue({
     },
     //metodi di animazione
     autoplay() {
-      let time = this; ////importantissmo perche altrimenti non me lo passa questo
-      //this dentro la funzione del set interval
+      let time = this;
+      //console.log(this);
+      ////importantissmo perche altrimenti non me lo passa questo
+      //this , ovvero questa #app Vue dentro la funzione del set interval
+      //ma passa la window , quindi non posso chiamare nextImage();
       this.interval = setInterval(function () {
         time.nextImage();
       }, 3000);
