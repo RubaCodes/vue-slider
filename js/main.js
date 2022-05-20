@@ -32,3 +32,12 @@ const images = [
     text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
   },
 ];
+
+const app = new Vue({
+  el: '#root',
+  data: {
+    images,
+    currentImage: 0,
+  },
+  methods: {},
+});
