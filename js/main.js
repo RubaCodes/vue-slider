@@ -38,6 +38,7 @@ const app = new Vue({
   data: {
     images,
     currentImage: 0,
+    //hook al setInterval
     interval: '',
   },
   methods: {
@@ -55,11 +56,13 @@ const app = new Vue({
         this.currentImage--;
       }
     },
-    selectImage(e, index) {
+    selectImage(index) {
       this.currentImage = index;
     },
+    //metodi di animazione
     autoplay() {
-      let time = this; ////importantissmo perche altrimenti non me lo passa questo this
+      let time = this; ////importantissmo perche altrimenti non me lo passa questo
+      //this dentro la funzione del set interval
       this.interval = setInterval(function () {
         time.nextImage();
       }, 3000);
@@ -68,6 +71,7 @@ const app = new Vue({
       clearInterval(this.interval);
     },
   },
+  //finto il montaggio  parte il carosello
   mounted() {
     this.autoplay();
   },

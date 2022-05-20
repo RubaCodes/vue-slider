@@ -21,6 +21,7 @@
           </div>
         </div>
       </div>
+      <!-- quando il mouse entra sui thumb si resetta il timer, quando esce fa il resume -->
       <div class="thumbs" @mouseover="reset()" @mouseleave="autoplay()">
         <!-- previous button -->
         <div class="prev" @click="previousImage()"></div>
@@ -29,7 +30,7 @@
           class="thumb"
           v-for="(image,index) in images"
           :class="{ active: currentImage == index }"
-          @click="selectImage(image,index)"
+          @click="selectImage(index)"
         >
           <img :src="image.src" alt="image.title" />
         </div>
