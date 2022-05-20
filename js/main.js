@@ -57,9 +57,14 @@ const app = new Vue({
     selectImage(e, index) {
       this.currentImage = index;
     },
-    // autoplay() {
-    //   setInterval(this.nextImage(), 3000);
-    //   console.log('ciao');
-    // },
+    autoplay() {
+      let time = this; ////importantissmo perche altrimenti non me lo passa questo this
+      setInterval(function () {
+        time.nextImage();
+      }, 3000);
+    },
+  },
+  mounted() {
+    this.autoplay();
   },
 });
