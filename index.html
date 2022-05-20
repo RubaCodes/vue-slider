@@ -22,8 +22,13 @@
         <!-- previous button -->
         <div class="prev" @click="previousImage()"></div>
 
-        <div class="thumb active" v-for="image in images">
-          <img :src="image.src" alt="" />
+        <div
+          class="thumb"
+          v-for="(image,index) in images"
+          :class="{ active: image.isActive }"
+          @click="selectImage(image,index)"
+        >
+          <img :src="image.src" alt="image.title" />
         </div>
         <!-- next button -->
         <div class="next" @click="nextImage()"></div>

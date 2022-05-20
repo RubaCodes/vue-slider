@@ -10,26 +10,31 @@ const images = [
     src: 'img/01.jpg',
     title: 'Svezia',
     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+    isActive: false,
   },
   {
     src: 'img/02.jpg',
     title: 'Svizzera',
     text: 'Lorem ipsum',
+    isActive: false,
   },
   {
     src: 'img/03.jpg',
     title: 'Gran Bretagna',
     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+    isActive: false,
   },
   {
     src: 'img/04.jpg',
     title: 'Germania',
     text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+    isActive: false,
   },
   {
     src: 'img/05.jpg',
     title: 'Paradise',
     text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+    isActive: false,
   },
 ];
 
@@ -53,6 +58,10 @@ const app = new Vue({
       } else {
         this.currentImage--;
       }
+    },
+    selectImage(e, index) {
+      this.currentImage = index;
+      e.isActive = !e.isActive;
     },
   },
 });
