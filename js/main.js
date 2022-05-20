@@ -38,6 +38,7 @@ const app = new Vue({
   data: {
     images,
     currentImage: 0,
+    interval: '',
   },
   methods: {
     nextImage() {
@@ -59,9 +60,12 @@ const app = new Vue({
     },
     autoplay() {
       let time = this; ////importantissmo perche altrimenti non me lo passa questo this
-      setInterval(function () {
+      this.interval = setInterval(function () {
         time.nextImage();
       }, 3000);
+    },
+    reset() {
+      clearInterval(this.interval);
     },
   },
   mounted() {
