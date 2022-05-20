@@ -37,11 +37,11 @@ const app = new Vue({
   el: '#root',
   data: {
     images,
-    currentImage: 1,
+    currentImage: 0,
   },
   methods: {
     nextImage() {
-      if (this.currentImage === this.images.lenght - 1) {
+      if (this.currentImage === this.images.length - 1) {
         this.currentImage = 0;
       } else {
         this.currentImage++;
@@ -49,7 +49,7 @@ const app = new Vue({
     },
     previousImage() {
       if (this.currentImage === 0) {
-        this.currentImage = this.images.lenght - 1;
+        this.currentImage = this.images.length - 1;
       } else {
         this.currentImage--;
       }
